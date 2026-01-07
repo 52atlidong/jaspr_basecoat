@@ -3,7 +3,9 @@ import 'package:jaspr/jaspr.dart';
 
 import 'base.dart';
 
-/// shadcn button
+/// shadcn 按钮组件
+/// 
+/// [onPressed] 点击 为空时自动disabled
 class ShadButton extends ShadBaseComponent {
   const ShadButton(
     super.children, {
@@ -53,6 +55,9 @@ class ShadButton extends ShadBaseComponent {
   String get shadClasses => 'btn$size${_isIcon ? '-icon' : ''}$variant';
 }
 
+/// 按钮大小
+/// 
+/// [value] class
 enum ButtonSize {
   /// small
   sm('-sm'),
@@ -73,6 +78,9 @@ enum ButtonSize {
   }
 }
 
+/// 按钮样式变种
+/// 
+/// [value] class
 enum ButtonVariant {
   primary('-primary'),
   secondary('-secondary'),
