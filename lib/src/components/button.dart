@@ -4,7 +4,7 @@ import 'package:jaspr/jaspr.dart';
 import 'base.dart';
 
 /// shadcn 按钮组件
-/// 
+///
 /// [onPressed] 点击 为空时自动disabled
 class ShadButton extends ShadBaseComponent {
   const ShadButton(
@@ -13,9 +13,11 @@ class ShadButton extends ShadBaseComponent {
     this.type = .button,
     this.variant = .primary,
     this.size = .md,
-    super.classes,
     super.id,
-    super.key,
+    super.classes,
+    super.styles,
+    super.attributes,
+    super.events,
   }) : _isIcon = false;
 
   const ShadButton.icon(
@@ -24,9 +26,11 @@ class ShadButton extends ShadBaseComponent {
     this.type = .button,
     this.variant = .ghost,
     this.size = .md,
-    super.classes,
     super.id,
-    super.key,
+    super.classes,
+    super.styles,
+    super.attributes,
+    super.events,
   }) : _isIcon = true;
 
   final VoidCallback? onPressed;
@@ -43,20 +47,20 @@ class ShadButton extends ShadBaseComponent {
   String get tag => 'button';
 
   @override
-  Map<String, String>? get attributes => {
+  Map<String, String>? get innerAttributes => {
     if (onPressed == null) 'disabled': '',
     'type': ?type?.value,
   };
 
   @override
-  Map<String, EventCallback>? get events => {...shadEvents<void>(onClick: onPressed)};
+  Map<String, EventCallback>? get innerEvents => {...shadEvents<void>(onClick: onPressed)};
 
   @override
-  String get shadClasses => 'btn$size${_isIcon ? '-icon' : ''}$variant';
+  String get innerClasses => 'btn$size${_isIcon ? '-icon' : ''}$variant';
 }
 
 /// 按钮大小
-/// 
+///
 /// [value] class
 enum ButtonSize {
   /// small
@@ -79,7 +83,7 @@ enum ButtonSize {
 }
 
 /// 按钮样式变种
-/// 
+///
 /// [value] class
 enum ButtonVariant {
   primary('-primary'),

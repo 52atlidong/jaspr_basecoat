@@ -3,41 +3,76 @@ import 'package:jaspr/jaspr.dart';
 import 'base.dart';
 
 class ShadCard extends ShadBaseComponent {
-  const ShadCard(super.children, {super.classes, super.id, super.key});
+  const ShadCard(
+    super.children, {
+    super.id,
+    super.classes,
+    super.styles,
+    super.attributes,
+    super.events,
+  });
 
   @override
   String get tag => 'div';
 
   @override
-  String get shadClasses => 'card';
+  String get innerClasses => 'card';
 }
 
 class ShadCardHeader extends ShadBaseComponent {
-  const ShadCardHeader(super.children, {super.classes, super.id, super.key});
+  const ShadCardHeader(
+    super.children, {
+    super.id,
+    super.classes,
+    super.styles,
+    super.attributes,
+    super.events,
+  });
 
   @override
-  String get shadClasses => 'flex flex-col';
+  String get innerClasses => 'flex flex-col';
 
   @override
   String get tag => 'header';
 }
 
 class ShadCardTitle extends ShadBaseComponent {
-  const ShadCardTitle(super.children, {super.classes, super.id, super.key});
+  const ShadCardTitle(
+    super.children, {
+    super.id,
+    super.classes,
+    super.styles,
+    super.attributes,
+    super.events,
+  });
 
   @override
   String get tag => 'h2';
 }
 
 class ShadCardDescription extends ShadBaseComponent {
-  const ShadCardDescription(super.children, {super.classes, super.id, super.key});
+  const ShadCardDescription(
+    super.children, {
+    super.id,
+    super.classes,
+    super.styles,
+    super.attributes,
+    super.events,
+  });
 
   @override
   String get tag => 'p';
 }
 
 class ShadCardContent extends ShadBaseComponent {
-  const ShadCardContent(super.children, {super.classes, super.id, super.key});
+  const ShadCardContent(
+    super.children, {
+    super.id,
+    super.classes,
+    super.styles,
+    super.attributes,
+    super.events,
+  });
 
   @override
   Component build(BuildContext context) {
