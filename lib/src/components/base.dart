@@ -54,4 +54,11 @@ abstract class ShadBaseComponent extends StatelessComponent {
   Map<String, String>? get innerAttributes => null;
 
   String get innerClasses => '';
+
+  String? explicitBool(bool? val) => switch(val) {
+    true => kIsWeb ? 'true': '',
+    false => kIsWeb ? 'false': null,
+    null => null,
+  };
+
 }
